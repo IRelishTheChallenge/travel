@@ -1,0 +1,53 @@
+<h3>Create Logs</h3>
+<div [hidden]="submitted" style="width: 400px;">
+  <form (ngSubmit)="onSubmit()" ngNativeValidate>
+
+    <div class="form-group">
+      <label for="date">Date</label>
+      <input type="date" class="form-control" id="date" 
+required [(ngModel)]="logs.date" name="date">
+    </div>
+
+    <div class="form-group">
+      <label for="reg_number">Registration number</label>
+      <input type="text" class="form-control" id="reg_number" 
+required [(ngModel)]="logs.regNumber" name="reg_number">
+    </div>
+    
+    <div class="form-group">
+      <label for="owner_name">Owners name</label>
+      <input type="text" class="form-control" id="owner_name" 
+required [(ngModel)]="logs.ownerName" name="owner_name">
+    </div>
+    
+    <div class="form-group">
+      <label for="odometer_start">Odometer start</label>
+      <input type="number" class="form-control" id="odometer_start" 
+required [(ngModel)]="logs.odometerStart" name="odometer_start">
+    </div>
+    
+    <div class="form-group">
+      <label for="odometer_end">Odometer end</label>
+      <input type="number" class="form-control" id="odometer_end" 
+required [(ngModel)]="logs.odometerEnd" name="odometer_end">
+    </div>
+
+    <div class="form-group">
+      <label for="route">Route</label>
+      <input type="text" class="form-control" id="route" 
+required [(ngModel)]="logs.route" name="route">
+    </div>
+
+    <div class="form-group">
+      <label for="description">Description</label>
+      <input type="text" class="form-control" id="description" 
+required [(ngModel)]="logs.description" name="description">
+    </div>
+
+    <button type="submit" class="btn btn-danger">Submit</button>
+  </form>
+</div>
+
+<div [hidden]="!submitted">
+  <h4>Successfully submitted!</h4>
+</div>

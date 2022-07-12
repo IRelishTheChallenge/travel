@@ -1,0 +1,23 @@
+micronaut:
+  server:
+    cors:
+      enabled: true
+  application:
+    name: travel
+datasources:
+  default:
+    url: jdbc:postgresql://localhost:5432/postgres
+    driverClassName: org.postgresql.Driver
+    username: postgres
+    password: thisispassword
+    dialect: POSTGRES
+netty:
+  default:
+    allocator:
+      max-order: 3
+
+liquibase:
+  enabled: true
+  datasources:
+    default:
+      change-log: 'classpath:db/liquibase-changelog.xml'

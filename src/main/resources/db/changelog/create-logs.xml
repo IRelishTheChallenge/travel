@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+
+    <changeSet id="01" author="zxc">
+        <createTable tableName="logs">
+            <column name="id" type="BIGINT" autoIncrement="true">
+                <constraints nullable="false"
+                             unique="true"
+                             primaryKey="true"
+                             primaryKeyName="logsPK"/>
+            </column>
+
+            <column name="date" type="varchar(50)">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="reg_number" type="varchar(50)">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="owner_name" type="varchar(50)">
+                <constraints nullable="false"/>
+            </column>
+            
+            <column name="odometer_start" type="int">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="odometer_end" type="int">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="route" type="varchar(50)">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="description" type="varchar(50)">
+                <constraints nullable="false"/>
+            </column>
+
+        </createTable>
+
+    </changeSet>
+    <changeSet id="02" author="zxc">
+        <insert tableName="logs">
+            <column name="date" value="2022-04-01"/>
+            <column name="reg_number" value="123456"/>
+            <column name="owner_name" value="Anton"/>
+            <column name="odometer_start" value="100"/>
+            <column name="odometer_end" value="300"/>
+            <column name="route" value="Tallinn-Rakvere"/>
+            <column name="description" value="buying office supplies"/>
+        </insert>
+        <insert tableName="logs">
+            <column name="date" value="2022-04-02"/>
+            <column name="reg_number" value="qwezxc"/>
+            <column name="owner_name" value="Anton"/>
+            <column name="odometer_start" value="200"/>
+            <column name="odometer_end" value="300"/>
+            <column name="route" value="Tallinn-Rakvere"/>
+            <column name="description" value="buying office supplies"/>
+        </insert>
+        <insert tableName="logs">
+            <column name="date" value="2022-04-03"/>
+            <column name="reg_number" value="123456"/>
+            <column name="owner_name" value="Stas"/>
+            <column name="odometer_start" value="400"/>
+            <column name="odometer_end" value="1000"/>
+            <column name="route" value="Tallinn-Rakvere"/>
+            <column name="description" value="buying office supplies"/>
+        </insert>
+        <insert tableName="logs">
+            <column name="date" value="2022-04-04"/>
+            <column name="reg_number" value="qwezxc"/>
+            <column name="owner_name" value="Anton"/>
+            <column name="odometer_start" value="100"/>
+            <column name="odometer_end" value="300"/>
+            <column name="route" value="Tallinn-Rakvere"/>
+            <column name="description" value="buying office supplies"/>
+        </insert>
+        <insert tableName="logs">
+            <column name="date" value="2022-04-05"/>
+            <column name="reg_number" value="qwezxc"/>
+            <column name="owner_name" value="Stas"/>
+            <column name="odometer_start" value="400"/>
+            <column name="odometer_end" value="600"/>
+            <column name="route" value="Tallinn-Rakvere"/>
+            <column name="description" value="buying office supplies"/>
+        </insert>
+    
+    </changeSet>
+
+</databaseChangeLog>

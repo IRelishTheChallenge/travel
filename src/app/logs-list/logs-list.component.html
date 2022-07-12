@@ -1,0 +1,41 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">
+      <h2>Logs List</h2>
+    </div>
+    
+    <div class="panel-body">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Registration number</th>
+            <th>Owners name</th>
+            <th>Odometer start</th>
+            <th>Odometer end</th>
+            <th>Route</th>
+            <th>Description</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let log of logs | async">
+            <td>{{log.date}}</td>
+            <td>{{log.regNumber}}</td>
+            <td>{{log.ownerName}}</td>
+            <td>{{log.odometerStart}}</td>
+            <td>{{log.odometerEnd}}</td>
+            <td>{{log.route}}</td>
+            <td>{{log.description}}</td>
+            <td>
+              <button (click)="updateLogs(log.id)" 
+               class="btn btn-warning" 
+                style="margin-left: 10px">Update</button>
+              <button (click)="deleteLogs(log.id)" 
+                class="btn btn-danger" 
+                 style="margin-left: 10px">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>

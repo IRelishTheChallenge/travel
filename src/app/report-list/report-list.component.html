@@ -1,0 +1,50 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">
+      <h2>Report list</h2>
+      <div [hidden]="" style="width: 400px;">
+        <form (ngSubmit)="onSubmit()" >
+          <div class="form-group">
+            <label for="ownerName">Owners name</label>
+            <input type="text" class="form-control" id="ownerName" 
+             [(ngModel)]="ownerName" name="ownerName">
+          </div>
+          <button type="submit" class="btn btn-danger">Filter</button>
+
+        </form>
+      </div>
+    </div>
+    
+    <div class="panel-body">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Registration number</th>
+            <th>Owners name</th>
+            <th>Odometer start</th>
+            <th>Odometer end</th>
+            <th>Route</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let log of logs">
+            <td>{{log.date}}</td>
+            <td>{{log.regNumber}}</td>
+            <td>{{log.ownerName}}</td>
+            <td>{{log.odometerStart}}</td>
+            <td>{{log.odometerEnd}}</td>
+            <td>{{log.route}}</td>
+            <td>{{log.description}}</td>
+          </tr>
+        </tbody>
+      </table>
+      <div [hidden]="" style="width: 400px;">
+        <div>
+          <label>Total amount of travelled distance:</label>
+        </div>
+        <div><td>{{total}}</div>
+        
+      </div>
+    </div>
+  </div>
